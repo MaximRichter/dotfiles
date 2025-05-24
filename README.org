@@ -1,3 +1,35 @@
 #+title: Readme
-* About
-Simple dotfile folder with all my configs
+
+This directory contains the dotfiles for my system
+
+** Requirements
+
+Ensure you have the following installed on your system
+
+*** Git
+#+begin_src
+pacman -S git
+#+end_src
+
+*** Stow
+#+begin_src
+pacman -S stow
+#+end_src
+
+** Installation
+
+First, check out the dotfiles repo in your $HOME directory using git
+
+#+begin_src
+$ git clone 'repo link'
+$ cd dotfiles
+#+end_src
+
+then use GNU Stow to create symlinks
+
+#+begin_src
+$ stow .
+#+end_src
+
+** Relevant links
+https://www.youtube.com/watch?v=y6XCebnB9gs
