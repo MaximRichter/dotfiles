@@ -32,4 +32,4 @@ $ stow .
 #+end_src
 
 ** Relevant links
-https://www.youtube.com/watch?v=y6XCebnB9gs
+<video src="https://www.youtube.com/watch?v=y6XCebnB9gs" width="320" height="240" controls></video>
