@@ -1,7 +1,7 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 function fish_greeting
-  fastfetch --logo ~/Wallpapers/banner-fastfetch_3.jpg --color blue
+  fastfetch --logo ~/wallpapers/banner-fastfetch_3.jpg --color blue
 end
 
 # function fish_prompt
