@@ -29,4 +29,5 @@ require("lazy").setup({
 	require("plugins.misc"),
 	require("plugins.oil"),
 	require("plugins.gitsigns"),
+	require("plugins.obsidian"),
 })
