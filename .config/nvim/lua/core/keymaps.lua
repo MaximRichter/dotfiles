@@ -72,9 +72,9 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 -- Toggle line wrapping
 vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
 
--- Press df or fd fast to exit insert mode
-vim.keymap.set("i", "df", "<ESC>", opts)
-vim.keymap.set("i", "fd", "<ESC>", opts)
+-- Press sf or fs fast to exit insert mode
+vim.keymap.set("i", "sf", "<ESC>", opts)
+vim.keymap.set("i", "fs", "<ESC>", opts)
 
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", opts)
