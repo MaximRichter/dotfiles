@@ -30,4 +30,5 @@ require("lazy").setup({
 	require("plugins.oil"),
 	require("plugins.gitsigns"),
 	require("plugins.obsidian"),
+	require("plugins.render-markdown"),
 })
