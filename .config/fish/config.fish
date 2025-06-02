@@ -2,7 +2,7 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # fastfetch
 function fish_greeting
-  fastfetch --logo ~/wallpapers/banner-fastfetch_3.jpg --color blue
+  fastfetch --logo ~/wallpapers/banner-fastfetch_5.jpg --color blue
 end
 
 # Yazi function 
