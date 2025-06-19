@@ -14,8 +14,7 @@ rtp:prepend(lazypath)
 
 require("lazy").setup({
 	require("plugins.neotree"),
-	require("plugins.gruvbox"),
-	require("plugins.darcubox"),
+	require("plugins.colortheme"),
 	-- require("plugins.hellwal"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
@@ -32,6 +31,5 @@ require("lazy").setup({
 	require("plugins.gitsigns"),
 	require("plugins.obsidian"),
 	require("plugins.render-markdown"),
+	require("plugins.toggleterm"),
 })
-
-vim.cmd("colorscheme gruvbox")
