@@ -206,11 +206,53 @@
 - "
          :target (file+head "moc/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}
-#+filetags: MOC
+#+filetags: Fleeting
 #+date: %U
-" )
+")
          :unnarrowed t)
-        ))
+        ("h" "Human" plain
+"
+* Краткие сведения
+- ~Кто это~:
+- ~Как познакомились~:
+- ~Дата рождения~: %^{Дата рождения}
+* Важное про человека
+
+* Встречи
+-
+
+* Связанные заметки
+-
+"
+ :target (file+head "people/%<%Y%m%d%H%M%S>-${slug}.org"
+"#+title: ${title}
+#+filetags: person %^{Tags}
+#+date: %U
+")
+ :unnarrowed t)
+        ("c" "CBT Record (ABC)" plain
+         "* Событие
+%?
+* Мысли
+
+* Последствия
+- Эмоции (0-100%):
+- Реакция тела:
+- Поведение:
+
+* Диспут
+- Доказательства ЗА:
+- Доказательства ПРОТИВ:
+- Альтернативный взгляд:
+
+* Итог
+- Новая эмоция:
+- План действий: "
+         :target (file+head "cbt/%<%Y%m%d%H%M%S>-cbt-${slug}.org"
+                            "#+title: ${title}
+#+filetags: :psychology:cbt:
+#+date: %U")
+         :unnarrowed t)))
 
 
 ;; === Utility Function: Delete Current Note ===
@@ -233,14 +275,25 @@
 (setq org-roam-dailies-capture-templates
       '(
         ("d" "Daily" plain
-         "* Задачи
-- [ ] %?
+         "* Сводка дня
+- Общий тон: %?
+- Главная победа дня:
+
+* Состояние:
+- Сон:
+- Энергия:
+- Настроение:
+- Ощущения:
 
 * Как прошел день
 
-* Какие были мысли
+* Мысли
 -
-"
+
+* КПТ
+-
+
+* Ссылки"
          :target (file+head "%<%Y-%m-%d>.org"
                             "#+title: %<%Y-%m-%d %A>
 #+filetags: daily
