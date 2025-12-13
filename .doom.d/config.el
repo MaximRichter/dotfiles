@@ -206,7 +206,7 @@
 - "
          :target (file+head "moc/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}
-#+filetags: Fleeting
+#+filetags: MOC
 #+date: %U
 ")
          :unnarrowed t)

@@ -15,6 +15,8 @@ function y
 	rm -f -- "$tmp"
 end
 
+set -Ux fzf_fd_opts --hidden --exclude=.git
+
 # function fish_prompt
 #   echo (set_color --bold brgreen)'~'
 #   echo (set_color brred)'❯ '
