@@ -252,7 +252,12 @@
                             "#+title: ${title}
 #+filetags: :psychology:cbt:
 #+date: %U")
-         :unnarrowed t)))
+         :unnarrowed t)
+        ("s" "stub" plain
+           "\n* Связанные идеи\n\n* Ссылки\n"
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :stub:\n")
+           :unnarrowed t
+           :immediate-finish t)))
 
 
 ;; === Utility Function: Delete Current Note ===
@@ -310,4 +315,4 @@
   (interactive)
   (let ((consult-ripgrep-command "rg --null --ignore-case --type org --line-buffered --color=always --max-columns=500 --no-heading --line-number . -e ARG OPTS"))
     (consult-ripgrep org-roam-directory)))
-(global-set-key (kbd "C-c n r") 'org-roam-rg-search)
+(global-set-key (kbd "C-c n s") 'org-roam-rg-search)
