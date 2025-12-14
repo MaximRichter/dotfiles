@@ -17,6 +17,9 @@ end
 
 set -Ux fzf_fd_opts --hidden --exclude=.git
 
+set PATH "$PATH":"$HOME/.local/scripts/"
+bind \cf "tmux-sessionizer"
+
 # function fish_prompt
 #   echo (set_color --bold brgreen)'~'
 #   echo (set_color brred)'❯ '

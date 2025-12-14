@@ -120,3 +120,6 @@ vim.keymap.set("n", "<leader>sl", ":source .session.vim<CR>", { noremap = true, 
 -- Layout change
 vim.keymap.set("i", "<C-\\>", "<C-^>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-\\>", "<C-^>", { noremap = true, silent = true })
+
+-- fzf через ctrl-f (tmux-sessionizer) как у Primeagen
+vim.keymap.set("n", "<leader>pf", "<cmd>silent !tmux neww ~/.local/scripts/tmux-sessionizer<CR>")
