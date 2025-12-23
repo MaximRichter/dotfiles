@@ -167,15 +167,35 @@
 
         ;; Literature note: заметка по источнику
         ("l" "Literature" plain
-         "* %?"
-         :target (file+head "literature/%<%Y%m%d%H%M%S>-${slug}.org"
-                            "#+title: ${title}
-#+filetags: Literature
-#+date: %U
-#+author: %^{Author}
-#+year: %^{Year}
-#+source: %^{Source}
-" )
+         "* Метаданные
+- Автор/Режиссёр: %^{Автор}
+- Год: %^{Год}
+- Жанр/Тип: %^{Жанр}
+- Где: %^{Источник}
+- Статус: %^{Статус|прочитано|просмотрено|в процессе}
+
+* О чём
+%?
+
+* Ключевые идеи
+-
+
+* Что зацепило лично
+
+
+* Цитаты/Моменты
+
+
+* Связи
+
+
+* Потенциальные Permanent Notes
+- [ ]
+
+* Источник
+"
+      :target (file+head "literature/%<%Y%m%d%H%M%S>-${slug}.org"
+                         "#+title: ${title}\n#+filetags: :literature:\n")
          :unnarrowed t)
 
         ;; Permanent note: постоянная идея
