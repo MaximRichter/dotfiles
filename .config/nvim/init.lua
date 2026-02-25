@@ -14,8 +14,7 @@ rtp:prepend(lazypath)
 
 require("lazy").setup({
 	require("plugins.neotree"),
-	require("plugins.colortheme"),
-	-- require("plugins.hellwal"),
+	-- require("plugins.colortheme"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
 	require("plugins.treesitter"),
@@ -32,4 +31,6 @@ require("lazy").setup({
 	require("plugins.obsidian"),
 	require("plugins.render-markdown"),
 	require("plugins.toggleterm"),
+	-- require("plugins.hellwal"),
+	require("plugins.pywal"),
 })

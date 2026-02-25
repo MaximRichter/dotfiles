@@ -336,3 +336,7 @@
   (let ((consult-ripgrep-command "rg --null --ignore-case --type org --line-buffered --color=always --max-columns=500 --no-heading --line-number . -e ARG OPTS"))
     (consult-ripgrep org-roam-directory)))
 (global-set-key (kbd "C-c n s") 'org-roam-rg-search)
+
+;; setting up pywal16 theme
+(use-package! ewal-doom-themes
+  :config (load-theme 'ewal-doom-vibrant t))

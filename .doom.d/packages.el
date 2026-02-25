@@ -70,3 +70,6 @@
 
 (package! org-super-agenda)
 (package! org-ql)
+
+(package! ewal)
+(package! ewal-doom-themes)

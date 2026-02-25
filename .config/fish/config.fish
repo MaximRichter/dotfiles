@@ -1,5 +1,12 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
+# hellwal
+# source ~/.cache/hellwal/variablesfish.fish
+# sh ~/.cache/hellwal/terminal.sh
+
+# pywal16
+cat ~/.cache/wal/sequences &
+
 # fastfetch
 function fish_greeting
   fastfetch --logo ~/wallpapers/banner-fastfetch_5.jpg --color blue
