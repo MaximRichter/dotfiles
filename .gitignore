@@ -1,0 +1,27 @@
+# ── Qutebrowser ──
+.config/qutebrowser/qsettings/
+.config/qutebrowser/bookmarks/urls
+.config/qutebrowser/quickmarks
+.config/qutebrowser/autoconfig.yml
+
+# ── Fish ──
+.config/fish/fish_variables
+
+# ── Nvim ──
+.config/nvim/lazy-lock.json
+
+# ── Waybar backups ──
+.config/waybar/config_bak
+.config/waybar/config_bak2
+.config/waybar/style_bak.css
+.config/waybar/style1.css
+.config/waybar/style2.css
+
+# ── Mako (symlink to cache, not a real file) ──
+.config/mako/config
+
+# ── Misc ──
+tree-dotfiles.txt
+*.log
+*.cache
+.DS_Store
