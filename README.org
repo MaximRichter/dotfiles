@@ -1,35 +1,95 @@
-#+title: Readme
+#+title: richter's dotfiles
+#+author: richter
+#+description: Hyprland dotfiles for CachyOS
 
-This directory contains the dotfiles for my system
+* Screenshots
 
-** Requirements
+# Add your rice screenshots here
 
-Ensure you have the following installed on your system
+* System
+| Component    | Package                  |
+|--------------+--------------------------|
+| OS           | CachyOS (Arch-based)     |
+| WM           | Hyprland                 |
+| Bar          | Waybar                   |
+| Terminal     | Alacritty                |
+| Shell        | Fish                     |
+| Editor       | Neovim / Doom Emacs      |
+| Browser      | Qutebrowser              |
+| File Manager | Thunar                   |
+| Launcher     | Rofi                     |
+| Notifications| Mako                     |
+| Music        | cmus / Yandex Music      |
+| Colorscheme  | pywal16 (dynamic)        |
+| Font         | JetBrainsMono Nerd Font  |
+| Cursor       | Bibata Modern Ice        |
+| Wallpapers   | waypaper + random keybind|
 
-*** Git
-#+begin_src
-pacman -S git
+* Features
+- Dynamic colorscheme via pywal16 — everything updates on wallpaper change
+- Waybar with three pill groups (left/center/right) following pywal
+- Window transparency and blur via Hyprland decorations
+- Gradient borders following pywal colors
+- Mako notifications themed with pywal templates
+- Random wallpaper keybind (~Super + W~) with automatic theme reload
+
+* Requirements
+** Core
+#+begin_src sh
+paru -S git stow hyprland waybar alacritty fish neovim rofi mako waypaper python-pywal16
 #+end_src
 
-*** Stow
-#+begin_src
-pacman -S stow
+** Fonts
+#+begin_src sh
+paru -S ttf-jetbrains-mono-nerd
 #+end_src
 
-** Installation
-
-First, check out the dotfiles repo in your $HOME directory using git
-
-#+begin_src
-$ git clone 'repo link'
-$ cd dotfiles
+** Full package list
+A complete package list is available in the =packages/= directory:
+#+begin_src sh
+paru -S --needed - < packages/pkglist.txt
+paru -S --needed - < packages/pkglist-aur.txt
 #+end_src
 
-then use GNU Stow to create symlinks
-
-#+begin_src
-$ stow .
+* Installation
+** 1. Clone the repo
+#+begin_src sh
+git clone <your-repo-url> ~/dotfiles
+cd ~/dotfiles
 #+end_src
 
-** Relevant links
-https://www.youtube.com/watch?v=y6XCebnB9gs
+** 2. Stow dotfiles
+#+begin_src sh
+stow --target=$HOME .
+#+end_src
+
+** 3. Fix hardcoded username
+A few files reference ~/richter~ as the username and need to be updated manually:
+#+begin_src sh
+sed -i 's/richter/yourusername/g' ~/.config/waybar/style.css
+sed -i 's/richter/yourusername/g' ~/.config/waypaper/config.ini
+#+end_src
+
+** 4. Generate initial colorscheme
+#+begin_src sh
+wal --cols16 lighten -i ~/dotfiles/wallpapers/street_dusk.png
+#+end_src
+
+** 5. Reload Hyprland
+#+begin_src
+Super + Shift + R
+#+end_src
+
+* Keybinds
+| Keybind          | Action                  |
+|------------------+-------------------------|
+| Super + W        | Random wallpaper        |
+| Super + A        | Screenshot area         |
+| Super + Shift + R| Reload Hyprland config  |
+| Super + Y        | Launch Yandex Music     |
+
+* Relevant links
+- [[https://wiki.hyprland.org][Hyprland Wiki]]
+- [[https://github.com/dylanaraps/pywal][pywal]]
+- [[https://github.com/alexays/waybar][Waybar]]
+- [[https://www.youtube.com/watch?v=y6XCebnB9gs][Stow guide]]
