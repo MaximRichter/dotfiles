@@ -1,4 +1,4 @@
-#+title: richter's dotfiles
+#+title: Richter's dotfiles
 #+author: richter
 #+description: Hyprland dotfiles for CachyOS
 
@@ -31,7 +31,7 @@
 - Window transparency and blur via Hyprland decorations
 - Gradient borders following pywal colors
 - Mako notifications themed with pywal templates
-- Random wallpaper keybind (~Super + W~) with automatic theme reload
+- Random wallpaper keybind (~Super + Shift + W~) with automatic theme reload
 
 * Requirements
 ** Core
@@ -75,18 +75,11 @@ sed -i 's/richter/yourusername/g' ~/.config/waypaper/config.ini
 wal --cols16 lighten -i ~/dotfiles/wallpapers/street_dusk.png
 #+end_src
 
-** 5. Reload Hyprland
-#+begin_src
-Super + Shift + R
-#+end_src
-
 * Keybinds
-| Keybind          | Action                  |
-|------------------+-------------------------|
-| Super + W        | Random wallpaper        |
-| Super + A        | Screenshot area         |
-| Super + Shift + R| Reload Hyprland config  |
-| Super + Y        | Launch Yandex Music     |
+| Keybind           | Action                  |
+|-------------------+-------------------------|
+| Super + Shift + W | Random wallpaper        |
+| Super + A         | Screenshot area         |
 
 * Relevant links
 - [[https://wiki.hyprland.org][Hyprland Wiki]]
