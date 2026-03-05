@@ -67,7 +67,6 @@ stow --target=$HOME .
 A few files reference ~/richter~ as the username and need to be updated manually:
 #+begin_src sh
 sed -i 's/richter/yourusername/g' ~/.config/waybar/style.css
-sed -i 's/richter/yourusername/g' ~/.config/waypaper/config.ini
 #+end_src
 
 ** 4. Generate initial colorscheme

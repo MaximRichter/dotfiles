@@ -107,7 +107,7 @@ c.content.blocking.adblock.lists = [
 # Внешний редактор и загрузки
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 c.downloads.location.directory = "~/Downloads"
-c.downloads.location.prompt    = False
+c.downloads.location.prompt    = True
 c.downloads.open_dispatcher    = "xdg-open"
 
 # Приватность
