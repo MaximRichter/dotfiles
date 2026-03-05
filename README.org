@@ -4,7 +4,7 @@
 
 * Screenshots
 
-# Add your rice screenshots here
+[[./screenshots/rice1.png]]
 
 * System
 | Component    | Package                  |
