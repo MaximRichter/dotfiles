@@ -1,0 +1,11 @@
+max-visible=10
+layer=top
+font=JetBrainsMono Nerd Font 10
+background-color={color0}dd
+text-color={foreground}
+border-color={color1}
+border-radius=7
+max-icon-size=48
+default-timeout=10000
+anchor=top-right
+margin=20
