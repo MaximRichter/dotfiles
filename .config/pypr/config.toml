@@ -1,0 +1,16 @@
+[pyprland]
+plugins = [
+    "scratchpads",
+    "magnify",
+]
+
+[magnify]
+factor = 2
+
+[scratchpads.term]
+animation = "fromTop"
+command = "alacritty --class alacritty-scratch"
+class = "alacritty-scratch"
+size = "40% 60%"
+margin = 70
+lazy = true
