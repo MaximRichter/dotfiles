@@ -3,7 +3,13 @@
 
 * Screenshots
 
-[[./screenshots/rice1.png]]
+[[./screenshots/rice_1.png]]
+[[./screenshots/rice_2.png]]
+[[./screenshots/rice_3.png]]
+[[./screenshots/rice_4.png]]
+[[./screenshots/rice_5.png]]
+[[./screenshots/rice_6.png]]
+[[./screenshots/rice_7.png]]
 
 * System
 
