@@ -91,6 +91,16 @@ c.url.searchengines = {
     "aw": "https://wiki.archlinux.org/?search={}",
     "wp": "https://en.wikipedia.org/w/index.php?search={}",
     "rt": "https://rutracker.org/forum/tracker.php?nm={}",
+    "aur": "https://aur.archlinux.org/packages/?K={}",
+    "imdb": "https://www.imdb.com/find?q={}",
+    "md": "https://mangadex.org/search?q={}",
+    "nyaa": "https://nyaa.si/?f=0&c=0_0&q={}",
+    "shikia": "https://shikimori.one/animes?search={}",
+    "shikim": "https://shikimori.one/mangas?search={}",
+    "shikir": "https://shikimori.one/ranobe?search={}",
+    "shikic": "https://shikimori.one/characters?search={}",
+    "shikip": "https://shikimori.one/people?search={}",
+
 }
 c.url.start_pages  = ["about:blank"]
 c.url.default_page = "about:blank"
