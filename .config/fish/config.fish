@@ -9,7 +9,7 @@ cat ~/.cache/wal/sequences &
 
 # fastfetch
 function fish_greeting
-  fastfetch --logo ~/wallpapers/banner-fastfetch_5.jpg --color blue
+  fastfetch --logo ~/wallpapers/white/banner-fastfetch_5.jpg --color blue
 end
 
 # Yazi function 

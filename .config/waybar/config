@@ -58,8 +58,8 @@
     "cpu": {
         "interval": 1,
         "format": " {max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
-        "max-length": 15,
-        "min-length": 15
+        "max-length": 17,
+        "min-length": 17
     },
 
     "custom/storage": {

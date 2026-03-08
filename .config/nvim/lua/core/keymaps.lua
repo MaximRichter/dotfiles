@@ -123,3 +123,6 @@ vim.keymap.set("n", "<C-\\>", "<C-^>", { noremap = true, silent = true })
 
 -- fzf через ctrl-f (tmux-sessionizer) как у Primeagen
 vim.keymap.set("n", "<leader>pf", "<cmd>silent !tmux neww ~/.local/scripts/tmux-sessionizer<CR>")
+
+-- open Oil
+vim.keymap.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "Open Oil" })
