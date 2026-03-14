@@ -94,15 +94,15 @@ window#waybar.hidden {
 }
 
 /* ── Colors ── */
-#cpu              { color: @color9; }
-#memory           { color: @color9; }
+#cpu              { color: @foreground; }
+#memory           { color: @foreground; }
 #clock            { color: @foreground; }
-#network          { color: @color4; }
-#bluetooth        { color: @color4; }
-#wireplumber      { color: @color6; }
-#custom-media     { color: @color2; }
-#custom-power     { color: @color1; }
-#custom-weather   { color: @color3; }
+#network          { color: @foreground; }
+#bluetooth        { color: @foreground; }
+#wireplumber      { color: @foreground; }
+#custom-media     { color: @foreground; }
+#custom-power     { color: @foreground; }
+#custom-weather   { color: @foreground; }
 
 #network.disconnected,
 #bluetooth.disconnected { color: @color1; }

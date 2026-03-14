@@ -1,7 +1,17 @@
 #!/bin/bash
 echo "$(date) args: $@" >> /tmp/wal-theme.log
 echo "$(date) wal path: $(which wal)" >> /tmp/wal-theme.log
-wal -i "$1" -n --cols16 darken --backend colorz
+
+MODE=$(cat ~/.cache/wal/mode 2>/dev/null || echo "dark")
+if [ "$MODE" = "light" ]; then
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+else
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+fi
+
+[ "$MODE" = "light" ] && WAL_FLAGS="-l" || WAL_FLAGS=""
+
+wal -i "$1" -n --cols16 darken --backend colorz $WAL_FLAGS
 themecord -p
 pkill -SIGUSR2 waybar 2>/dev/null
 pkill -SIGUSR1 nvim 2>/dev/null
