@@ -100,7 +100,7 @@ c.url.searchengines = {
     "shikir": "https://shikimori.one/ranobe?search={}",
     "shikic": "https://shikimori.one/characters?search={}",
     "shikip": "https://shikimori.one/people?search={}",
-
+    "hltb": "https://howlongtobeat.com/?q={}", 
 }
 c.url.start_pages  = ["about:blank"]
 c.url.default_page = "about:blank"

@@ -326,6 +326,41 @@
 ")
          :unnarrowed t)))
 
+;; skip function for agenda: show only top-level headings
+(defun my/agenda-skip-non-first-heading ()
+  (save-excursion
+    (let ((pos (point)))
+      (goto-char (point-min))
+      (org-next-visible-heading 1)
+      (when (< (point) pos)
+        (org-end-of-subtree t)))))
+
+;; org-agenda custom commands for processing pipeline
+(after! org
+  (setq org-agenda-custom-commands
+        '(("1" "Stubs → обработать во флетинги"
+           tags "+stub"
+           ((org-agenda-skip-function 'my/agenda-skip-non-first-heading)))
+          ("2" "Fleeting → обработать в перманентки"
+           tags "+Fleeting"
+           ((org-agenda-skip-function 'my/agenda-skip-non-first-heading))))))
+
+;; move current org-roam file to selected directory
+(defun org-roam-move-file-to-dir ()
+  "Переместить текущий org-roam файл в выбранную папку и обновить БД."
+  (interactive)
+  (let* ((current-file (buffer-file-name))
+         (roam-dir (expand-file-name org-roam-directory))
+         (target-dir (read-directory-name "Переместить в: " roam-dir))
+         (new-file (expand-file-name (file-name-nondirectory current-file) target-dir)))
+    (rename-file current-file new-file)
+    (set-visited-file-name new-file t t)
+    (org-roam-db-update-file new-file)
+    (message "Перемещено в %s" target-dir)))
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c n m") #'org-roam-move-file-to-dir))
+
 ;; changing input method hotkey
 ;;(map! :gn "C-'" #'toggle-input-method)
 
@@ -338,5 +373,6 @@
 (global-set-key (kbd "C-c n s") 'org-roam-rg-search)
 
 ;; setting up pywal16 theme
-(use-package! ewal-doom-themes
-  :config (load-theme 'ewal-doom-vibrant t))
+(unless noninteractive
+  (use-package! ewal-doom-themes
+    :config (load-theme 'ewal-doom-vibrant t)))

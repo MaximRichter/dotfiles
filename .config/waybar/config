@@ -19,6 +19,7 @@
     ],
     "modules-right": [
         "custom/storage",
+        "custom/shed",
         "memory",
         "cpu",
         "wireplumber",
@@ -70,6 +71,16 @@
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
     },
+
+    "custom/shed": {
+        "format": " {}",
+        "format-alt": "{percentage}% ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/shed.sh"
+    },
+
 
     "wireplumber": {
         "on-click": "pavucontrol",
