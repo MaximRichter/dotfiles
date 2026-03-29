@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'modus-vivendi)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -85,11 +85,48 @@
 ;; Russian keyboard
 (setq default-input-method "russian-computer")
 
+;; keep JetBrains font in zen mode
+(after! writeroom-mode
+  (remove-hook 'writeroom-mode-hook #'mixed-pitch-mode))
+
+;; PKM layout
+(defun my/pkm-layout ()
+  "PKM layout: [agenda / стабы | заметка]"
+  (interactive)
+  (delete-other-windows)
+  (let* ((left (selected-window))
+         (middle (split-window-right (/ (frame-width) 3))))
+    (select-window left)
+    (let ((left-bottom (split-window-below)))
+      (org-agenda nil "a")
+      (select-window left-bottom)
+      (org-agenda nil "1"))
+    (select-window middle)))
+
+(map! :leader
+      (:prefix ("l" . "layouts")
+       :desc "PKM layout" "p" #'my/pkm-layout))
+
+;; Window resize hydra
+(defhydra my/window-resize (:hint nil)
+  "Resize window"
+  ("<" evil-window-decrease-width "←")
+  (">" evil-window-increase-width "→")
+  ("-" evil-window-decrease-height "↓")
+  ("+" evil-window-increase-height "↑")
+  ("=" balance-windows "balance")
+  ("q" nil "quit"))
+
+(map! :leader :desc "Resize window" "w z" #'my/window-resize/body)
+
 ;; Additional org keybinds
 (after! org
   (map! :map org-mode-map
         :n "M-j" #'org-metadown
-        :n "M-k" #'org-metaup))
+        :n "M-k" #'org-metaup)
+  (setq company-idle-delay nil)
+  (setq org-agenda-window-setup 'current-window)
+  (setq org-agenda-sticky t))
 
 (use-package org-roam
   :ensure t
@@ -141,8 +178,7 @@
 (setq org-roam-mode-sections
       (list #'org-roam-backlinks-section
             #'org-roam-reflinks-section
-            #'org-roam-unlinked-references-section
-            ))
+            #'org-roam-unlinked-references-section))
 
 ;; $DOOMDIR/config.el
 (use-package! org-pandoc-import :after org)
@@ -168,11 +204,11 @@
         ;; Literature note: заметка по источнику
         ("l" "Literature" plain
          "* Метаданные
-- Автор/Режиссёр: %^{Автор}
-- Год: %^{Год}
-- Жанр/Тип: %^{Жанр}
-- Где: %^{Источник}
-- Статус: %^{Статус|прочитано|просмотрено|в процессе}
+- Автор/Режиссёр:
+- Год:
+- Жанр/Тип:
+- Где:
+- Статус:
 
 * О чём
 %?
@@ -215,12 +251,10 @@
         ;; MOC: универсальный Map of Content для любых проектов
         ("m" "MOC" plain
          "* Описание
-- %^{Short description of the project}
+-
 
 * Разделы
-- %^{Section 1}
-- %^{Section 2}
-- %^{Section 3}
+-
 
 * Источники
 - "
@@ -372,7 +406,3 @@
     (consult-ripgrep org-roam-directory)))
 (global-set-key (kbd "C-c n s") 'org-roam-rg-search)
 
-;; setting up pywal16 theme
-(unless noninteractive
-  (use-package! ewal-doom-themes
-    :config (load-theme 'ewal-doom-vibrant t)))

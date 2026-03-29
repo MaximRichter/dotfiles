@@ -5,7 +5,9 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 # sh ~/.cache/hellwal/terminal.sh
 
 # pywal16
-cat ~/.cache/wal/sequences &
+if status is-interactive
+    cat ~/.cache/wal/sequences &
+end
 
 # fastfetch
 function fish_greeting
