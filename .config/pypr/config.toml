@@ -1,8 +1,5 @@
 [pyprland]
-plugins = [
-    "scratchpads",
-    "magnify",
-]
+plugins = ["scratchpads", "magnify"]
 
 [magnify]
 factor = 2
@@ -14,3 +11,19 @@ class = "alacritty-scratch"
 size = "40% 60%"
 margin = 70
 lazy = true
+
+[scratchpads.mail]
+animation = "fromTop"
+command = "thunderbird"
+class = "org.mozilla.Thunderbird"
+size = "75% 80%"
+margin = 70
+lazy = false
+
+[scratchpads.tg]
+animation = "fromTop"
+command = "Telegram"
+class = "org.telegram.desktop"
+size = "55% 80%"
+margin = 70
+lazy = false

@@ -243,7 +243,7 @@
 - "
          :target (file+head "permanent/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}
-#+filetags: %^{Tags}
+#+filetags: :permanent:
 #+date: %U
 " )
          :unnarrowed t)
@@ -260,7 +260,7 @@
 - "
          :target (file+head "moc/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}
-#+filetags: MOC
+#+filetags: :MOC:
 #+date: %U
 ")
          :unnarrowed t)
@@ -309,7 +309,7 @@
          :unnarrowed t)
         ("s" "stub" plain
            "\n* Связанные идеи\n\n* Ссылки\n"
-           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :stub:\n")
+           :target (file+head "inbox/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :stub:\n")
            :unnarrowed t
            :immediate-finish t)))
 
@@ -376,7 +376,7 @@
            tags "+stub"
            ((org-agenda-skip-function 'my/agenda-skip-non-first-heading)))
           ("2" "Fleeting → обработать в перманентки"
-           tags "+Fleeting"
+           tags "+fleeting-archive"
            ((org-agenda-skip-function 'my/agenda-skip-non-first-heading))))))
 
 ;; move current org-roam file to selected directory
