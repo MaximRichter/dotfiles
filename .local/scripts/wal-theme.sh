@@ -11,7 +11,7 @@ fi
 
 [ "$MODE" = "light" ] && WAL_FLAGS="-l" || WAL_FLAGS=""
 
-wal -i "$1" -n --cols16 darken --backend colorz $WAL_FLAGS
+wal -i "$1" -n --cols16 darken --backend wal $WAL_FLAGS
 # swww img "$1" -o DP-2 --resize crop
 themecord -p
 pkill -SIGUSR2 waybar 2>/dev/null

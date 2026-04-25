@@ -1,0 +1,103 @@
+@import "~/.config/rofi/colors/pywal.rasi"
+
+* {
+    font: "JetBrains Mono Nerd Font 11";
+}
+
+configuration {
+    show-icons:     false;
+    case-sensitive: false;
+}
+
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    fullscreen:       false;
+    width:            480px;
+    border:           2px solid;
+    border-radius:    12px;
+    border-color:     @selected;
+    background-color: @background;
+    cursor:           "default";
+}
+
+mainbox {
+    spacing:          12px;
+    padding:          24px;
+    background-color: transparent;
+    children:         [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    spacing:          10px;
+    padding:          0px;
+    background-color: transparent;
+    text-color:       @foreground;
+    children:         [ "textbox-prompt-colon", "entry" ];
+}
+
+entry {
+    padding:           8px 0px;
+    background-color:  transparent;
+    text-color:        @foreground;
+    placeholder:       "search...";
+    placeholder-color: @foreground;
+    cursor:            text;
+    vertical-align:    0.5;
+}
+
+textbox-prompt-colon {
+    expand:           false;
+    str:              "VPN";
+    padding:          8px 14px;
+    border-radius:    100%;
+    background-color: @active;
+    text-color:       @background;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+}
+
+message {
+    padding:          10px;
+    border-radius:    8px;
+    background-color: @background-alt;
+    text-color:       @foreground;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+}
+
+listview {
+    columns:          1;
+    lines:            8;
+    cycle:            true;
+    scrollbar:        false;
+    spacing:          4px;
+    background-color: transparent;
+    cursor:           "default";
+}
+
+element {
+    padding:          10px 14px;
+    border-radius:    8px;
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:           pointer;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color:       @background;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}

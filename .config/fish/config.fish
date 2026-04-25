@@ -11,7 +11,7 @@ end
 
 # fastfetch
 function fish_greeting
-  fastfetch --logo ~/wallpapers/white/banner-fastfetch_5.jpg --color blue
+  fastfetch --color blue
 end
 
 # Yazi function 

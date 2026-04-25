@@ -104,6 +104,13 @@ window#waybar.hidden {
 #custom-power     { color: @foreground; }
 #custom-weather   { color: @foreground; }
 
+#custom-vpn {
+    background-color: transparent;
+    padding: 0 6px;
+    margin: 4px 0;
+    color: @foreground;
+}
+
 #network.disconnected,
 #bluetooth.disconnected { color: @color1; }
 

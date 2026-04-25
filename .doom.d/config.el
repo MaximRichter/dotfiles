@@ -406,3 +406,5 @@
     (consult-ripgrep org-roam-directory)))
 (global-set-key (kbd "C-c n s") 'org-roam-rg-search)
 
+(use-package! org-roam-timeline
+  :after org-roam)

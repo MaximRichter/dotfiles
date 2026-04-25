@@ -18,6 +18,7 @@
         "custom/weather"
     ],
     "modules-right": [
+        "custom/vpn",
         "custom/storage",
         "custom/shed",
         "memory",
@@ -113,6 +114,14 @@
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
+    },
+
+    "custom/vpn": {
+        "format": "{}",
+        "interval": 10,
+        "signal": 10,
+        "exec": "~/.config/waybar/modules/vpn.sh",
+        "on-click": "~/.local/scripts/vpn-picker.sh"
     },
 
     "custom/power": {

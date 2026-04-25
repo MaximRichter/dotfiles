@@ -71,3 +71,5 @@
 (package! org-super-agenda)
 (package! org-ql)
 
+(package! org-roam-timeline
+  :recipe (:host github :repo "GerardoCendejas/org-roam-timeline"))
