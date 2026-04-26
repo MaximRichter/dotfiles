@@ -1,37 +1,27 @@
 {
     "layer": "top",
-    "output": "DP-1",
+    "output": "DP-2",
     "position": "top",
     "height": 37,
     "spacing": 5,
-
     "margin-left": 10,
     "margin-top": 0,
     "margin-right": 10,
     "margin-bottom": 0,
-
     "modules-left": [
         "hyprland/workspaces",
         "custom/media"
     ],
     "modules-center": [
-        "clock#date",
-        "custom/weather"
+        "clock#date"
     ],
     "modules-right": [
         "custom/vpn",
-        "custom/network-month",
-        "custom/storage",
-        "custom/shed",
-        "memory",
-        "cpu",
         "wireplumber",
-        "custom/screenshot_t",
         "custom/mic",
         "tray",
         "custom/power"
     ],
-
     "hyprland/workspaces": {
         "all-outputs": false,
         "format": "{name}",
@@ -40,59 +30,19 @@
         "sort-by-number": true,
         "active-only": false
     },
-
     "clock#date": {
         "format": " {:%Y-%m-%d 󰥔 %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "today-format": "<b>{}</b>"
     },
-
-    "custom/weather": {
-        "format": "{}",
-        "interval": 3600,
-        "exec": "curl -s 'https://wttr.in/?format=1'",
-        "exec-if": "ping wttr.in -c1"
-    },
-
-    "custom/network-month": {
-        "exec": "~/.config/waybar/modules/network-month.sh",
+    "custom/media": {
+        "exec": "~/.config/waybar/mediaplayer.py",
+        "format": "{} <span foreground='#32AD98'></span> ",
         "return-type": "json",
-        "format": "<span foreground='#32AD98'>󰖟</span> {}",
-        "interval": 5
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
-
-    "memory": {
-        "interval": 30,
-        "format": "<span foreground='#32AD98'></span>  {used:0.2f} / {total:0.0f} GB",
-        "on-click": "alacritty -e btop"
-    },
-
-    "cpu": {
-        "interval": 1,
-        "format": "<span foreground='#32AD98'></span> {max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
-        "max-length": 17,
-        "min-length": 17
-    },
-
-    "custom/storage": {
-        "format": "<span foreground='#32AD98'></span> {}",
-        "format-alt": "{percentage}% ",
-        "format-alt-click": "click-right",
-        "return-type": "json",
-        "interval": 60,
-        "exec": "~/.config/waybar/modules/storage.sh"
-    },
-
-    "custom/shed": {
-        "format": "<span foreground='#32AD98'></span> {}",
-        "format-alt": "{percentage}% ",
-        "format-alt-click": "click-right",
-        "return-type": "json",
-        "interval": 60,
-        "exec": "~/.config/waybar/modules/shed.sh"
-    },
-
-
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
@@ -107,25 +57,13 @@
             "phone": " ",
             "portable": " ",
             "car": " ",
-            "default": [" ", " ", " "]
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
         }
     },
-
-    "custom/screenshot_t": {
-        "format": " ",
-        "on-click": "~/.config/hypr/scripts/screenshot_full",
-        "on-click-right": "~/.config/hypr/scripts/screenshot_area"
-    },
-
-    "custom/media": {
-        "exec": "~/.config/waybar/mediaplayer.py",
-        "format": "{} <span foreground='#32AD98'></span> ",
-        "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
-    },
-
     "custom/vpn": {
         "return-type": "json",
         "format": "<span foreground='#32AD98'>󰖂</span> {}",
@@ -134,7 +72,6 @@
         "exec": "~/.config/waybar/modules/vpn.sh",
         "on-click": "~/.local/scripts/vpn-picker.sh"
     },
-
     "custom/mic": {
         "exec": "~/.config/waybar/modules/mic.sh",
         "return-type": "json",
@@ -148,7 +85,6 @@
         "tooltip": false,
         "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh"
     },
-
     "tray": {
         "icon-size": 14,
         "spacing": 6

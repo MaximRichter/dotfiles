@@ -3,11 +3,30 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    # Объединить сессии и директории в правильном порядке
+    hex=$(grep "^color9=" ~/.cache/wal/colors.sh 2>/dev/null | cut -d"'" -f2 | tr -d '#')
+    [ -z "$hex" ] && hex="5FA697"
+    r=$((16#${hex:0:2})); g=$((16#${hex:2:2})); b=$((16#${hex:4:2}))
+    color="\x1b[38;2;${r};${g};${b}m"
+    reset="\x1b[0m"
+
     selected=$({
-        tmux list-sessions -F "SESSION:#{session_name}" 2>/dev/null
-        fd --type d --hidden --exclude .git . ~ --max-depth 3
-    } | fzf)
+        tmux list-sessions -F "SESSION:#{session_name}" 2>/dev/null | \
+            sed "s/^SESSION:/${color}SESSION:${reset}/"
+        for dir in ~/shed/projects ~/dotfiles ~/.config; do
+            [ -d "$dir" ] && echo "$dir"
+        done
+        fd --type d --hidden --exclude .git \
+            --exclude .wine --exclude .zen --exclude .thunderbird \
+            --exclude .steam --exclude .Superposition --exclude .themes \
+            --exclude .var --exclude .yarn --exclude .vim --exclude .tmux \
+            --exclude wallpapers --exclude .Trash-1000 --exclude torrents \
+            --exclude .ipython --exclude SteamLibrary --exclude games \
+            --exclude media --exclude prism-instances \
+            --exclude .venv --exclude .ipynb_checkpoints \
+            . ~ --max-depth 3
+    } | fzf --ansi \
+        --preview 'bash -c "item=\$(echo {} | sed \"s/\x1b\[[0-9;]*m//g\"); if [[ \$item == SESSION:* ]]; then tmux list-windows -t \"\${item#SESSION:}\" 2>/dev/null; else eza --color=always --icons --tree --level=2 \"\$item\" 2>/dev/null; fi"' \
+        --preview-window=right:40%)
 fi
 
 if [[ -z $selected ]]; then

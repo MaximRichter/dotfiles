@@ -11,7 +11,15 @@ end
 
 # fastfetch
 function fish_greeting
-  fastfetch --color blue
+    set hex (grep "^color14=" ~/.cache/wal/colors.sh 2>/dev/null | cut -d"'" -f2 | string replace '#' '')
+    if test -n "$hex"
+        set r (printf "%d" 0x(string sub -s 1 -l 2 $hex))
+        set g (printf "%d" 0x(string sub -s 3 -l 2 $hex))
+        set b (printf "%d" 0x(string sub -s 5 -l 2 $hex))
+        fastfetch --color "38;2;$r;$g;$b"
+    else
+        fastfetch --color blue
+    end
 end
 
 # Yazi function 
@@ -28,6 +36,9 @@ set -Ux fzf_fd_opts --hidden --exclude=.git
 
 set PATH "$PATH":"$HOME/.local/scripts/"
 bind \cf "tmux-sessionizer"
+
+# zoxide
+zoxide init fish | source
 
 # function fish_prompt
 #   echo (set_color --bold brgreen)'~'

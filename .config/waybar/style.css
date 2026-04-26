@@ -104,6 +104,9 @@ window#waybar.hidden {
 #custom-power     { color: @foreground; }
 #custom-weather   { color: @foreground; }
 
+#custom-mic        { color: @foreground; }
+#custom-mic.muted  { color: @foreground; }
+
 #custom-vpn {
     background-color: transparent;
     padding: 0 6px;

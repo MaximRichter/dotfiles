@@ -6,8 +6,13 @@
 
 INTERVAL="${1:-1}"
 LOGFILE="$HOME/gpu-monitor.log"
-HWMON="/sys/class/drm/card1/device/hwmon/hwmon4"
 GPU="/sys/class/drm/card1/device"
+HWMON=$(find "$GPU/hwmon/" -maxdepth 1 -mindepth 1 -type d | head -1)
+
+if [ -z "$HWMON" ]; then
+    echo "Error: hwmon path not found under $GPU/hwmon/" >&2
+    exit 1
+fi
 
 echo "=== GPU Monitor started at $(date) ===" | tee "$LOGFILE"
 echo "Interval: ${INTERVAL}s" | tee -a "$LOGFILE"

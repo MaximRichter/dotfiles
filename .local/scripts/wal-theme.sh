@@ -13,10 +13,4 @@ fi
 
 wal -i "$1" -n --cols16 darken --backend wal $WAL_FLAGS
 # swww img "$1" -o DP-2 --resize crop
-themecord -p
-pkill -SIGUSR2 waybar 2>/dev/null
-pkill -SIGUSR1 nvim 2>/dev/null
-pkill -HUP qutebrowser 2>/dev/null
-bash ~/.local/share/pywal16-libadwaita/scripts/apply-theme.sh
-gradience-cli apply -p ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/pywal.json --gtk both
-bash ~/.local/share/pywal16-libadwaita/scripts/wal-papirus.sh
+~/.local/scripts/wal-reload.sh

@@ -29,14 +29,6 @@ else
 fi
 
 wal --cols16 darken --backend colorz -i "$WALLPAPER" -n $WAL_FLAGS
-
-# Reload everything
-themecord -p
-pkill -SIGUSR2 waybar 2>/dev/null
-pkill -SIGUSR1 nvim 2>/dev/null
-pkill -HUP qutebrowser 2>/dev/null
-bash ~/.local/share/pywal16-libadwaita/scripts/apply-theme.sh
-gradience-cli apply -p ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/pywal.json --gtk both
-bash ~/.local/share/pywal16-libadwaita/scripts/wal-papirus.sh
+~/.local/scripts/wal-reload.sh
 
 notify-send "Theme" "Switched to $NEW_MODE mode" -t 2000
