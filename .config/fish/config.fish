@@ -40,6 +40,9 @@ bind \cf "tmux-sessionizer"
 # zoxide
 zoxide init fish | source
 
+# starship prompts
+starship init fish | source
+
 # function fish_prompt
 #   echo (set_color --bold brgreen)'~'
 #   echo (set_color brred)'❯ '

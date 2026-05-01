@@ -6,17 +6,10 @@
 
 animations {
     enabled = yes
-
-    bezier = smoothOut, 0.16, 1, 0.3, 1
-    bezier = softOvershot, 0.13, 0.99, 0.29, 1.04
-
-    animation = windowsIn, 1, 4, softOvershot, slide
-    animation = windowsOut, 1, 4, smoothOut, slide
-    animation = windowsMove, 1, 4, smoothOut
-
-    animation = fade, 1, 4, smoothOut
-    animation = border, 1, 5, smoothOut
-
-    animation = workspacesIn, 1, 5, smoothOut, slidefade 20%
-    animation = workspacesOut, 1, 5, smoothOut, slidefade 20%
+    bezier = overshot, 0.13, 0.99, 0.29, 1.1
+    animation = windowsIn, 1, 4, overshot, slide
+    animation = windowsOut, 1, 5, default, popin 80%
+    animation = border, 1, 5, default
+    animation = workspacesIn, 1, 6, overshot, slide
+    animation = workspacesOut, 1, 6, overshot, slidefade 80%
 }
