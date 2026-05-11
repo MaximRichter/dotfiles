@@ -57,25 +57,25 @@
     "custom/network-month": {
         "exec": "~/.config/waybar/modules/network-month.sh",
         "return-type": "json",
-        "format": "<span foreground='#32AD98'>󰖟</span> {}",
+        "format": "<span foreground='#CCB395'>󰖟</span> {}",
         "interval": 5
     },
 
     "memory": {
         "interval": 30,
-        "format": "<span foreground='#32AD98'></span>  {used:0.2f} / {total:0.0f} GB",
+        "format": "<span foreground='#CCB395'></span>  {used:0.2f} / {total:0.0f} GB",
         "on-click": "alacritty -e btop"
     },
 
     "cpu": {
         "interval": 1,
-        "format": "<span foreground='#32AD98'></span> {max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
+        "format": "<span foreground='#CCB395'></span> {max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
         "max-length": 17,
         "min-length": 17
     },
 
     "custom/storage": {
-        "format": "<span foreground='#32AD98'></span> {}",
+        "format": "<span foreground='#CCB395'></span> {}",
         "format-alt": "{percentage}% ",
         "format-alt-click": "click-right",
         "return-type": "json",
@@ -84,7 +84,7 @@
     },
 
     "custom/shed": {
-        "format": "<span foreground='#32AD98'></span> {}",
+        "format": "<span foreground='#CCB395'></span> {}",
         "format-alt": "{percentage}% ",
         "format-alt-click": "click-right",
         "return-type": "json",
@@ -96,7 +96,7 @@
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        "format": "<span foreground='#32AD98'>{icon}</span>  {volume}%",
+        "format": "<span foreground='#CCB395'>{icon}</span>  {volume}%",
         "format-muted": " ",
         "format-source": "",
         "format-source-muted": "",
@@ -119,7 +119,7 @@
 
     "custom/media": {
         "exec": "~/.config/waybar/mediaplayer.py",
-        "format": "{} <span foreground='#32AD98'></span> ",
+        "format": "{} <span foreground='#CCB395'></span> ",
         "return-type": "json",
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
@@ -128,7 +128,7 @@
 
     "custom/vpn": {
         "return-type": "json",
-        "format": "<span foreground='#32AD98'>󰖂</span> {}",
+        "format": "<span foreground='#CCB395'>󰖂</span> {}",
         "interval": 10,
         "signal": 10,
         "exec": "~/.config/waybar/modules/vpn.sh",

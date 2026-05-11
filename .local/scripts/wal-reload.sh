@@ -24,6 +24,7 @@ if [ -n "$ACCENT" ]; then
         ~/.config/waybar/config ~/.config/waybar/config_dp2 2>/dev/null
 fi
 
+hyprctl reload 2>/dev/null
 ~/.local/scripts/waybar-restart.sh
 pkill -SIGUSR1 nvim 2>/dev/null
 pkill -HUP qutebrowser 2>/dev/null
