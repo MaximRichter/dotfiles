@@ -25,6 +25,10 @@ if [ -n "$ACCENT" ]; then
 fi
 
 hyprctl reload 2>/dev/null
+if [ -f "$HOME/.cache/wal/niri-layout.kdl" ]; then
+    cp "$HOME/.cache/wal/niri-layout.kdl" "$HOME/.config/niri/modules/layout.kdl"
+    niri msg action load-config-file 2>/dev/null
+fi
 ~/.local/scripts/waybar-restart.sh
 pkill -SIGUSR1 nvim 2>/dev/null
 pkill -HUP qutebrowser 2>/dev/null
