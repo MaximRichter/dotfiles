@@ -1,0 +1,26 @@
+input {
+    keyboard {
+        xkb {
+            layout "us, ru"
+            variant ""
+            options "grp:alt_shift_toggle,ctrl:nocaps"
+        }
+    }
+
+    touchpad {
+        off
+    }
+
+    mouse {
+        accel-speed -0.3
+        accel-profile "flat"
+    }
+
+    trackpoint {
+        off
+    }
+
+    // warp-mouse-to-focus
+
+    // focus-follows-mouse max-scroll-amount="0%"
+}

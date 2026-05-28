@@ -1,0 +1,30 @@
+// Ported from Hyprland autostart.
+// Hyprland-specific entries are left commented out below.
+spawn-at-startup "awww-daemon"
+spawn-at-startup "waybar"
+spawn-at-startup "waybar" "-c" "/home/richter/.config/waybar/config_dp2"
+
+spawn-at-startup "mako"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "qpwgraph" "-m"
+spawn-at-startup "ghostty" "--gtk-single-instance=true" "--quit-after-last-window-closed=false" "--initial-window=false"
+spawn-at-startup "blueman-applet"
+spawn-at-startup "qbittorrent"
+
+spawn-sh-at-startup "rm -f /tmp/niri.wob; mkfifo /tmp/niri.wob; tail -f /tmp/niri.wob | wob"
+
+// Not found in PATH right now:
+// spawn-at-startup "fcitx5" "-d"
+// spawn-at-startup "nm-applet" "--indicator"
+// spawn-at-startup "idlehandler"
+
+// Hyprland-specific:
+// spawn-at-startup "/usr/bin/pypr"
+// spawn-at-startup "hyprctl" "setcursor" "Bibata-Modern-Ice" "24"
+
+hotkey-overlay {
+    skip-at-startup
+}

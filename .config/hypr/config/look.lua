@@ -71,7 +71,7 @@ hl.config({
 	},
 
 	render = {
-		direct_scanout = true,
+		direct_scanout = false,
 	},
 
 	animations = {

@@ -13,7 +13,7 @@ hl.on("hyprland.start", function()
 		[[bash -c 'mkfifo /tmp/$HYPRLAND_INSTANCE_SIGNATURE.wob && tail -f /tmp/$HYPRLAND_INSTANCE_SIGNATURE.wob | wob & disown']]
 	)
 	hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 &")
-	hl.exec_cmd("usr/bin/pypr")
+	hl.exec_cmd("/usr/bin/pypr")
 	hl.exec_cmd("idlehandler")
 	hl.exec_cmd("waypaper --restore")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")

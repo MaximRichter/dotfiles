@@ -1,0 +1,62 @@
+window-rule {
+    opacity 0.85
+    geometry-corner-radius 10
+    clip-to-geometry true
+    open-maximized false
+    open-maximized-to-edges false
+    
+    background-effect {
+        blur false
+        xray false
+    }
+}
+
+window-rule {
+    match app-id=r#"^org\.pulseaudio\.pavucontrol"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^$"# title=r#"^(Picture in picture|Save File|Open File|Steam - Self Updater)$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^LibreWolf$"# title=r#"^Picture-in-Picture$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^Picture-in-Picture$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^blueman-manager$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^(xdg-desktop-portal-gtk|xdg-desktop-portal-kde|xdg-desktop-portal-hyprland).*$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^(polkit-gnome-authentication-agent-1|hyprpolkitagent|org\.kde\.polkit-kde-authentication-agent-1).*$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^CachyOSHello$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^zenity$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(imv|mpv|danmufloat|termfloat|nemo|ncmpcpp)$"#
+    open-floating true
+}

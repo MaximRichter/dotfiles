@@ -68,7 +68,13 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			loginctl terminate-user ""
+			if command -v uwsm >/dev/null 2>&1; then
+				uwsm stop
+			elif [[ -n "$XDG_SESSION_ID" ]]; then
+				loginctl terminate-session "$XDG_SESSION_ID"
+			else
+				hyprctl dispatch exit
+			fi
 		fi
 	else
 		exit 0
