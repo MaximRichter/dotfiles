@@ -49,6 +49,8 @@
 ;; (unpin! t)
 
 (package! ef-themes)
+(package! ewal)
+(package! ewal-doom-themes)
 
 (unpin! org-roam)
 (package! org-roam-ui)

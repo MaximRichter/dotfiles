@@ -8,3 +8,6 @@ include "modules/animations.kdl"
 include "modules/autostart.kdl"
 include "modules/windowrules.kdl"
 include "modules/keybinds.kdl"
+cursor {
+    xcursor-size 24
+}

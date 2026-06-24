@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
-if pgrep -x openvpn > /dev/null; then
-    config=$(ps -p "$(pgrep -x openvpn | head -1)" -o args= 2>/dev/null \
-        | sed 's/.*--config //' | sed 's|.*/||; s|\.ovpn$||')
-    echo "{\"text\": \"VPN\", \"tooltip\": \"${config:-unknown}\"}"
+config_dir="${AMNEZIAWG_CONFIG_DIR:-$HOME/amnezia}"
+
+active=$(
+    find "$config_dir" -maxdepth 1 -type f -name "*.conf" -printf "%f\n" 2>/dev/null |
+        sed 's|\.conf$||' |
+        while IFS= read -r interface; do
+            if ip link show "$interface" &>/dev/null; then
+                printf "%s\n" "$interface"
+            fi
+        done |
+        paste -sd, - |
+        sed 's/,/, /g'
+)
+
+if [ -n "$active" ]; then
+    printf '{"text":"VPN","tooltip":"%s"}\n' "$active"
 else
     echo '{"text": ""}'
 fi

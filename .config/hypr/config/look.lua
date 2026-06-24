@@ -59,7 +59,7 @@ hl.config({
 		},
 
 		groupbar = {
-			font_family = "Fira Sans",
+			font_family = "IBM Plex Sans",
 			text_color = colors.cachydblue,
 			col = {
 				active = colors.cachydgreen,

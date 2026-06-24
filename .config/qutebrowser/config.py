@@ -114,6 +114,29 @@ c.content.blocking.adblock.lists = [
     "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
 ]
 
+# ChatGPT/OpenAI login is sensitive to blocked OAuth/storage requests.
+openai_patterns = [
+    "https://chatgpt.com/*",
+    "https://*.chatgpt.com/*",
+    "https://openai.com/*",
+    "https://*.openai.com/*",
+    "https://google.com/*",
+    "https://*.google.com/*",
+    "https://gstatic.com/*",
+    "https://*.gstatic.com/*",
+    "https://googleusercontent.com/*",
+    "https://*.googleusercontent.com/*",
+]
+for pattern in openai_patterns:
+    config.set("content.blocking.enabled", False, pattern)
+    config.set("content.cookies.accept", "all", pattern)
+    config.set("content.javascript.enabled", True, pattern)
+    config.set("content.local_storage", True, pattern)
+    config.set("content.webgl", True, pattern)
+    config.set("content.canvas_reading", True, pattern)
+    config.set("content.headers.do_not_track", None, pattern)
+    config.set("colors.webpage.darkmode.enabled", False, pattern)
+
 # Внешний редактор и загрузки
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 c.downloads.location.directory = "~/Downloads"
@@ -144,7 +167,7 @@ config.bind("p", "open -- {clipboard}")
 config.bind("P", "open -t -- {clipboard}")
 
 # Шрифты
-c.fonts.default_family = "JetBrainsMono Nerd Font"  # или твой моноширинный
+c.fonts.default_family = "IBM Plex Sans"
 c.fonts.default_size = "12pt"
 c.fonts.completion.entry = "12pt default_family"
 c.fonts.statusbar = "12pt default_family"

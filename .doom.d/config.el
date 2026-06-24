@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'modus-vivendi)
+(setq doom-theme 'ewal-doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -75,8 +75,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Font size
-(set-face-attribute 'default nil :height 150)
+;; Fonts
+(setq doom-font (font-spec :family "IBM Plex Mono" :size 20)
+      doom-variable-pitch-font (font-spec :family "IBM Plex Mono" :size 20)
+      doom-serif-font (font-spec :family "IBM Plex Serif" :size 20))
 
 ;; Opacity
 (set-frame-parameter (selected-frame) 'alpha-background 0.9)
@@ -85,7 +87,7 @@
 ;; Russian keyboard
 (setq default-input-method "russian-computer")
 
-;; keep JetBrains font in zen mode
+;; keep the fixed-pitch font in zen mode
 (after! writeroom-mode
   (remove-hook 'writeroom-mode-hook #'mixed-pitch-mode))
 

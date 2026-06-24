@@ -37,7 +37,7 @@
     },
     "custom/media": {
         "exec": "~/.config/waybar/mediaplayer.py",
-        "format": "{} <span foreground='#665353'></span> ",
+        "format": "{} <span foreground='#B15A44'></span> ",
         "return-type": "json",
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
@@ -46,7 +46,7 @@
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        "format": "<span foreground='#665353'>{icon}</span>  {volume}%",
+        "format": "<span foreground='#B15A44'>{icon}</span>  {volume}%",
         "format-muted": " ",
         "format-source": "",
         "format-source-muted": "",
@@ -66,11 +66,11 @@
     },
     "custom/vpn": {
         "return-type": "json",
-        "format": "<span foreground='#665353'>󰖂</span> {}",
+        "format": "<span foreground='#B15A44'>󰖂</span> {}",
         "interval": 10,
         "signal": 10,
         "exec": "~/.config/waybar/modules/vpn.sh",
-        "on-click": "~/.local/scripts/vpn-picker.sh"
+        "on-click": "~/.local/scripts/amneziawg-picker.sh"
     },
     "custom/mic": {
         "exec": "~/.config/waybar/modules/mic.sh",

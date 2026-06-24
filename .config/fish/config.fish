@@ -42,6 +42,7 @@ zoxide init fish | source
 
 # starship prompts
 starship init fish | source
+enable_transience
 
 # function fish_prompt
 #   echo (set_color --bold brgreen)'~'

@@ -28,7 +28,7 @@ else
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 fi
 
-wal --cols16 darken --backend colorz -i "$WALLPAPER" -n $WAL_FLAGS
+wal --cols16 darken --backend wal -i "$WALLPAPER" -n $WAL_FLAGS
 ~/.local/scripts/wal-reload.sh
 
 notify-send "Theme" "Switched to $NEW_MODE mode" -t 2000

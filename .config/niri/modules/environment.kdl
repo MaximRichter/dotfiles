@@ -2,6 +2,6 @@ environment {
     TERMINAL "foot"
     FILEMANAGER "yazi"
     MENU "/home/richter/.config/rofi/launchers/type-4/launcher.sh"
-    BROWSER "qutebrowser"
+    BROWSER "zen-browser"
     CAPTURING r#"grim -g "$(slurp)" - | swappy -f -"#
 }

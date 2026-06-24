@@ -7,8 +7,8 @@ local colors = require("config.colors")
 hl.config({
 	misc = {
 		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
-		font_family = "Fira Sans",
-		splash_font_family = "Fira Sans",
+		font_family = "IBM Plex Sans",
+		splash_font_family = "IBM Plex Sans",
 		disable_hyprland_logo = true,
 		col = {
 			splash = colors.cachylgreen,
