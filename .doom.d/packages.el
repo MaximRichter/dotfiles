@@ -75,3 +75,10 @@
 
 (package! org-roam-timeline
   :recipe (:host github :repo "GerardoCendejas/org-roam-timeline"))
+
+(package! org-contrib
+  :recipe (:host github
+           :repo "emacsmirror/org-contrib"
+           :files ("lisp/*.el")))
+
+(package! hledger-mode)

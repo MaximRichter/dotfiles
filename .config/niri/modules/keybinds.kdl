@@ -20,7 +20,7 @@ binds {
     Mod+Shift+Space hotkey-overlay-title="Pick a Kaomoji" { spawn "/home/richter/.local/scripts/rofi-kaomoji-themed.sh"; }
     Mod+Shift+W { spawn-sh "exec waypaper --folder ~/wallpapers/ --random"; }
     Mod+Ctrl+W { spawn "/home/richter/.local/scripts/wallpaper-picker.sh"; }
-    Mod+P { spawn "/home/richter/.local/scripts/amneziawg-picker.sh"; }
+    Mod+P { spawn "/home/richter/.local/scripts/vpn-picker.sh"; }
     Mod+Shift+O { spawn "/home/richter/.local/scripts/waybar-restart.sh"; }
     Mod+C { spawn-sh "cliphist list | rofi -dmenu -theme ~/.config/rofi/launchers/type-4/style-9.rasi | cliphist decode | wl-copy"; }
     Mod+Shift+C { spawn "hyprpicker" "-a"; }

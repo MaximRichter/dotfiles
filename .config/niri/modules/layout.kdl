@@ -28,16 +28,16 @@ layout {
     focus-ring {
         on
         width 3
-        active-gradient from="#788873" to="#6C7268" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#5a6e6e" to="#111313" angle=45 relative-to="workspace-view"
+        active-gradient from="#5E79C2" to="#5F6399" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#665d71" to="#160d20" angle=45 relative-to="workspace-view"
     }
 
     border {
         off
         width 3
-        active-color "#B15A44"
-        inactive-color "#5a6e6e"
-        urgent-color "#4b4842"
+        active-color "#4F6CB0"
+        inactive-color "#665d71"
+        urgent-color "#2e4578"
     }
 
     shadow {
@@ -59,13 +59,13 @@ layout {
         position "right"
         gaps-between-tabs 2
         corner-radius 8
-        active-color "#788873"
-        inactive-color "#5a6e6e"
-        urgent-color "#4b4842"
+        active-color "#5E79C2"
+        inactive-color "#665d71"
+        urgent-color "#2e4578"
     }
 
     insert-hint {
         on
-        color "#84433380"
+        color "#3b518480"
     }
 }

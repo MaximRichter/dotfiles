@@ -118,18 +118,44 @@ c.content.blocking.adblock.lists = [
 openai_patterns = [
     "https://chatgpt.com/*",
     "https://*.chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://*.chat.openai.com/*",
     "https://openai.com/*",
     "https://*.openai.com/*",
+    "https://oaistatic.com/*",
+    "https://*.oaistatic.com/*",
+    "https://oaiusercontent.com/*",
+    "https://*.oaiusercontent.com/*",
+    "https://auth0.com/*",
+    "https://*.auth0.com/*",
+    "https://arkoselabs.com/*",
+    "https://*.arkoselabs.com/*",
+    "https://funcaptcha.com/*",
+    "https://*.funcaptcha.com/*",
+    "https://challenges.cloudflare.com/*",
+    "https://*.cloudflare.com/*",
     "https://google.com/*",
     "https://*.google.com/*",
     "https://gstatic.com/*",
     "https://*.gstatic.com/*",
     "https://googleusercontent.com/*",
     "https://*.googleusercontent.com/*",
+    "https://login.live.com/*",
+    "https://*.live.com/*",
+    "https://login.microsoftonline.com/*",
+    "https://*.microsoftonline.com/*",
+    "https://microsoft.com/*",
+    "https://*.microsoft.com/*",
 ]
 for pattern in openai_patterns:
     config.set("content.blocking.enabled", False, pattern)
     config.set("content.cookies.accept", "all", pattern)
+    config.set(
+        "content.headers.user_agent",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+        pattern,
+    )
     config.set("content.javascript.enabled", True, pattern)
     config.set("content.local_storage", True, pattern)
     config.set("content.webgl", True, pattern)

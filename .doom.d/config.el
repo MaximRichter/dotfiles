@@ -410,3 +410,13 @@
 
 (use-package! org-roam-timeline
   :after org-roam)
+
+(after! org
+  (require 'org-checklist))
+
+(use-package! hledger-mode
+  :mode ("\\.journal\\'" "\\.hledger\\'" "\\.ledger\\'")
+  :config
+  (setq hledger-currency-string "RUB")
+  (setq hledger-jfile "~/org/main.journal"))
+
