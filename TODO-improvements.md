@@ -2,6 +2,7 @@
 
 ## High priority
 
+- After the filesystem/configuration revision is stable, rewrite Git history to remove historical `wallpapers/` revisions, then add the current wallpaper collection back once and garbage-collect the repository. Preserve configuration history and verify the working tree before any force-push.
 - Replace the `Super+Shift+Q` hard-kill bind with a gentler flow: `forcekillactive` or SIGTERM first, SIGKILL only as a fallback.
 - Move machine-specific values into local config/env files: `/home/richter`, monitor names and layout, `enp14s0`, `/etc/openvpn/other os`, `/home/richter/shed`.
 - Stop `wal-reload.sh` from editing tracked Waybar JSON files in place. Generate theme/accent data into cache or CSS/template files instead.

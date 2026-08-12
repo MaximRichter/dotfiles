@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'ewal-doom-one)
+(setq doom-theme 'ef-elea-dark)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -40,7 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/notes/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -133,7 +133,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory (file-truename "~/org/"))
+  (org-roam-directory (file-truename "~/notes/org/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
@@ -162,7 +162,7 @@
 ;; org agenda searching in org subfolders
 (with-eval-after-load 'org
   (defun org-agenda-files (&rest _)
-    (directory-files-recursively "~/org" org-agenda-file-regexp)))
+    (directory-files-recursively "~/notes/org" org-agenda-file-regexp)))
 
 ;; org-roam templates
 (setq org-roam-capture-templates
@@ -418,5 +418,4 @@
   :mode ("\\.journal\\'" "\\.hledger\\'" "\\.ledger\\'")
   :config
   (setq hledger-currency-string "RUB")
-  (setq hledger-jfile "~/org/main.journal"))
-
+  (setq hledger-jfile "~/Documents/finance/hledger/main.ledger"))

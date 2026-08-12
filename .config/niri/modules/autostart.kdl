@@ -15,9 +15,9 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "qbittorrent"
 
 spawn-sh-at-startup "rm -f /tmp/niri.wob; mkfifo /tmp/niri.wob; tail -f /tmp/niri.wob | wob"
+spawn-at-startup "fcitx5" "-d"
 
 // Not found in PATH right now:
-// spawn-at-startup "fcitx5" "-d"
 // spawn-at-startup "nm-applet" "--indicator"
 // spawn-at-startup "idlehandler"
 

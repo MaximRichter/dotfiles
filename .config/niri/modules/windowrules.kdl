@@ -12,6 +12,16 @@ window-rule {
 }
 
 window-rule {
+    // Steam / Proton
+    match app-id=r#"^steam_app_\d+$"#
+
+    // Wine-игры, включая большинство игр из Lutris
+    match app-id=r#"(?i)\.exe$"#
+
+    variable-refresh-rate true
+}
+
+window-rule {
     match app-id=r"^org\.pulseaudio\.pavucontrol"
     open-floating true
 }
@@ -59,4 +69,19 @@ window-rule {
 window-rule {
     match title=r"^(imv|mpv|danmufloat|termfloat|nemo|ncmpcpp)$"
     open-floating true
+}
+
+window-rule {
+    match app-id=r#"^mpv$"#
+    opacity 1.0
+}
+
+// Yomipv creates transparent auxiliary windows while the selector is active.
+// Under pointer focus, niri must not activate each newly mapped window: doing
+// so makes mpv hide it, then regain focus, producing an endless flash loop.
+window-rule {
+    match app-id=r#"^yomipv-lookup$"#
+    open-floating true
+    open-focused false
+    opacity 1.0
 }

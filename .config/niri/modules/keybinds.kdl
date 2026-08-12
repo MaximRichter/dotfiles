@@ -11,7 +11,7 @@ binds {
     Mod+D { spawn "vesktop"; }
     Mod+M { spawn "emacs"; }
     Mod+A { spawn-sh r#"grim -g "$(slurp)" - | wl-copy"#; }
-    Mod+Shift+A { spawn-sh r#"grim -g "$(slurp)" - | swappy -f -"#; }
+    Mod+Shift+A { spawn-sh r#"grim -g "$(slurp)" - | SCREENSHOT_DIR="$HOME/Pictures/screenshots/$(date +%Y/%m)" swappy -f -"#; }
     Mod+Ctrl+Shift+Q { spawn "/home/richter/.config/rofi/powermenu/type-1/powermenu.sh"; }
     Mod+W { spawn-sh "exec waypaper --folder ~/wallpapers/"; }
     Mod+Ctrl+Shift+R { spawn "/home/richter/.local/scripts/wallpaper-rotation-toggle.sh"; }
@@ -22,8 +22,12 @@ binds {
     Mod+Ctrl+W { spawn "/home/richter/.local/scripts/wallpaper-picker.sh"; }
     Mod+P { spawn "/home/richter/.local/scripts/vpn-picker.sh"; }
     Mod+Shift+O { spawn "/home/richter/.local/scripts/waybar-restart.sh"; }
+    Mod+Ctrl+O hotkey-overlay-title="Toggle Waybar" { spawn-sh "pkill -USR1 -x waybar"; }
     Mod+C { spawn-sh "cliphist list | rofi -dmenu -theme ~/.config/rofi/launchers/type-4/style-9.rasi | cliphist decode | wl-copy"; }
     Mod+Shift+C { spawn "hyprpicker" "-a"; }
+    Mod+Alt+L hotkey-overlay-title="Restore Window Layout" {
+        spawn "/home/richter/.config/niri/scripts/restore-layout-current.sh";
+    }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+(?=%)' | awk '{print $1}' | head -1 > /tmp/niri.wob"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+(?=%)' | awk '{print $1}' | head -1 > /tmp/niri.wob"; }

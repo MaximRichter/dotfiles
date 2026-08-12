@@ -25,3 +25,6 @@ tree-dotfiles.txt
 *.log
 *.cache
 .DS_Store
+**/__pycache__/
+*.py[cod]
+.config/mpv/scripts/yomipv/
